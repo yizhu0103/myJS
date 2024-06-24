@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //輸入視窗
+        //輸入分數
+        //檢查是否及格
+        let score;
+        score = window.prompt('請輸入分數');
+        if (score == null) {
+            window.alert('請勿取消');
+        }
+
+        else {
+            if (score == '') {
+                window.alert('分數空白');
+            }
+            else {
+                score = Number(score);
+                // 確認輸入為數值
+                // 因無法確認有無取消 故後轉換數值
+                if (isNaN(score)) {
+                    window.alert('輸入的分數err');
+                }
+                else {
+                    if (score < 0 || score > 100) {
+                        window.alert(score+'非有效範圍');
+                    }
+                    else {
+                        if (score >= 60 && score <= 100) {
+                            window.alert(score + '及格');
+                        }
+                        else {
+                            window.alert(score + '不及格');
+                        }
+                    }
+
+                }
+
+
+
+            }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
