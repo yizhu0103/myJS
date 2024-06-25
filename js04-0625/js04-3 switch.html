@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 血型判斷
+        let bl = prompt('s請輸入血型');
+        if (bl == null) {
+            document.write('請勿取消');
+        }
+        else {
+            bl = bl.trim().toUpperCase();
+            switch (bl) {
+                case ''://沒有填寫任何內容
+                    document.write('請勿空白');
+                    break;
+                case 'A':
+                    document.write('A型');
+                    break;
+                case 'B':
+                    document.write('B型');
+                    break;
+                case 'AB':
+                    document.write('AB型');
+                    break;
+                case 'O':
+                    document.write('O型');
+                    break;
+
+                default: //以上條件都不成立
+                    document.write('輸入錯誤');
+                    break;//最後一個break可以省略
+                //建議還是寫上來比較好
+
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 血型判斷
+        //轉大寫touppercase();
+        //轉小寫toLowerCase();
+
+
+        let bl = window.prompt('請輸入血型');
+
+        if (bl == null) {
+            document.write('您按了取消');
+        }
+        else {
+            bl = (bl.trim().toLowerCase());
+            if (bl == '') {
+                document.write('不能空白');
+            }
+            else if (bl == 'a') {
+                document.write('A型');
+            }
+            else if (bl == 'b') {
+                document.write('B型');
+            }
+            else if (bl == 'ab') {
+                document.write('AB型');
+            }
+            else if (bl == 'o') {
+                document.write('O型');
+            }
+            else {
+                document.write('查無此血型');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

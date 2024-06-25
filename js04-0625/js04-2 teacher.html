@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 血型判斷
+
+
+        let blood = window.prompt('請輸入血型');
+
+        if (blood == null) {
+            document.write('您按了取消');
+        }
+        else {
+            blood = blood.trim();
+
+            if (blood == '') {
+                document.write('不能空白');
+            }
+
+            else if (blood == 'a'||blood=='A') {
+                document.write('A型');
+            }
+            else if (blood == 'a'||blood=='A') {
+                document.write('B型');
+            }
+            else if (blood == 'aB'||blood=='Ab'||blood == 'ab'||blood=='AB') {
+                document.write('AB型');
+            }
+            else if (bl == 'o'||blood == 'O') {
+                document.write('O型');
+            }
+            else {
+                document.write('查無此血型');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
