@@ -13,51 +13,71 @@
 
         //ex5:請用一個迴圈，找出1-10中，3的倍數5的倍數，請在迴圈後顯示
         //chat gpt
-                let strc3=[];
-                let strc5=[];
-                for (let i = 1; i <= 10; i++) {
-                    if (i % 3 == 0) {
-                        strc3.push(i);
+        let strc3 = [];
+        let strc5 = [];
+        for (let i = 1; i <= 10; i++) {
+            if (i % 3 == 0) {
+                strc3.push(i);
 
-                    }
-                    else if (i % 5 == 0) {
-                        strc5.push(i);
-                    }
-                }
-                document.write("1 到 10 之間是 3 的倍數的數字有：", strc3.join(', '));
-                document.write('<br>');
-                document.write("1 到 10 之間是 5 的倍數的數字有：", strc5.join(', '));
-                document.write('<hr>');
-//先定義空字串
-//再給空字串保存(串接)
-//再由後面顯示
-                let str3='';
-                let str5='';
-                for (let i = 1; i <= 10; i++) {
-                    if (i % 3 == 0) {
-                        str3=str3+i+' ';//str+=i+' ' 可以這樣簡化 等於右邊加一個跟左邊一樣的元素
-                    }
-                    else if (i % 5 == 0) {
-                        str5=str5+i+' ';
-                    }
-                }
-                document.write(`${str3}`);
-                document.write('<br>');
-                document.write(str5);
+            }
+            else if (i % 5 == 0) {
+                strc5.push(i);
+            }
+        }
+        document.write("1 到 10 之間是 3 的倍數的數字有：", strc3.join(', '));
+        document.write('<br>');
+        document.write("1 到 10 之間是 5 的倍數的數字有：", strc5.join(', '));
+        document.write('<hr>');
+        //先定義空字串
+        //再給空字串保存(串接)
+        //再由後面顯示
+
+        let str3 = '';
+        let str3n = '';
+        let tot3 = 0;
+
+        let str5 = '';
+        let str5n = '';
+        let tot5 = 0;
+        for (let i = 1; i <= 10; i++) {
+            if (i % 3 == 0) {
+                str3 = str3 + i + ' ';
+                //str+=i+' ' 可以這樣簡化 等於右邊加一個跟左邊一樣的元素
+                str3n = (str3n + i)
+                if (i != 9) {
+                    str3n = str3n + "+";
+                }//不是9的時候才加上加號
+                //累計三的倍數
+                tot3=tot3+i;
+                //tot3=0
+                //邏輯i=3=>0+3=3
+                //邏輯i=6=>3+3=6
+                //邏輯i=9=>6+3=9
 
 
 
+            }
+            else if (i % 5 == 0) {
+                str5 = str5 + i + ' ';
+                str5n = str5n + i
+                if (i != 10) {
+                    str5n = str5n + "+";
+                }//不是10的時候才加上加號
+                tot5=tot5+i;
+            }
+        }
 
-        // for (let i = 1; i <= 10; i++) {
-        //             document.write(i); 
-        //         }
-        // if (a % 3 == 0) {
-        //                 document.write(i + ',');
-
-        //             }
-        //             else if (a % 5 == 0) {
-        //                 document.write(i+',');
-        //             }
+        document.write(str3n);
+        document.write('<br>');
+        document.write(str5n);
+        document.write('<br>');
+        document.write(`${str3n}=${tot3}`);
+        document.write('<br>');
+        document.write(`5+10=${tot5}`);
+        document.write('<br>');
+        document.write(`${str3}`);
+        document.write('<br>');
+        document.write(str5);
 
 
 

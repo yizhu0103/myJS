@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //判斷輸入數字
+        //錯誤三次結束 答對結束
+        // 最多能夠猜3次
+
+// 三次內答對，顯示結果如下
+// 第1次：11
+// 第2次：99
+// 答對了
+// --
+// 三次內答錯，顯示結果如下
+// 第1次：11
+// 第2次：88
+// 第3次：66
+// 挑戰失敗
+for (let i = 1; i <= 3; i++) {
+
+    let ans = Number(prompt('請輸入數字1-100'))
+            if (ans===52 ) {
+                document.write('第'+i+'次'+ans+'回答正確~'+'<br>');
+                document.write('恭喜答對');
+                break;
+            }
+            else {
+                document.write('第'+i+'次'+ans+' 答錯!'+'<br>');
+            }
+        }
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
