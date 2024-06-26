@@ -25,15 +25,25 @@
 // 第3次：66
 // 挑戰失敗
 for (let i = 1; i <= 3; i++) {
-
+    
     let ans = Number(prompt('請輸入數字1-100'))
-            if (ans===52 ) {
-                document.write('第'+i+'次'+ans+'回答正確~'+'<br>');
-                document.write('恭喜答對');
+    let bingoNum = 99
+
+            if (ans===bingoNum ) {
+                document.write('第'+i+'次 :'+ans+'回答正確~'+'<br>');
+                document.write('挑戰成功');
                 break;
             }
-            else {
-                document.write('第'+i+'次'+ans+' 答錯!'+'<br>');
+            else { 
+                if(i<3){ 
+                    document.write('第'+i+'次 :'+ans+' 答錯!'+'<br>');
+                }
+                else{
+                    document.write('第'+i+'次 :'+ans+' 答錯!'+'<br>');
+                    document.write('挑戰失敗');
+                    break;
+                }
+                
             }
         }
         
