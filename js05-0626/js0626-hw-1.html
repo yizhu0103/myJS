@@ -10,43 +10,55 @@
 <body>
     <script>
 
-        //判斷輸入數字
-        //錯誤三次結束 答對結束
-        // 最多能夠猜3次
+        for (let i = 1; i <= 3; i++) {
 
-// 三次內答對，顯示結果如下
-// 第1次：11
-// 第2次：99
-// 答對了
-// --
-// 三次內答錯，顯示結果如下
-// 第1次：11
-// 第2次：88
-// 第3次：66
-// 挑戰失敗
-for (let i = 1; i <= 3; i++) {
-    
-    let ans = Number(prompt('請輸入數字1-100'))
-    let bingoNum = 99
-
-            if (ans===bingoNum ) {
-                document.write('第'+i+'次 :'+ans+'回答正確~'+'<br>');
-                document.write('挑戰成功');
+            let ans = prompt('請輸入數字1-100')
+            let bingoNum = 99
+            if (ans == null) {
+                document.write('您按了取消');
                 break;
             }
-            else { 
-                if(i<3){ 
-                    document.write('第'+i+'次 :'+ans+' 答錯!'+'<br>');
-                }
-                else{
-                    document.write('第'+i+'次 :'+ans+' 答錯!'+'<br>');
-                    document.write('挑戰失敗');
+
+            else {
+                ans = Number(ans);
+                if (ans == '') {
+                    document.write('不能空白');
                     break;
                 }
-                
+
+                else {
+                    if (isNaN(ans)) {
+                        document.write('第' + i + '次 :' + '輸入錯誤請輸入數字');
+                        document.write('挑戰失敗');
+                        break;
+                    }
+
+                    else {
+                        if (ans === bingoNum) {
+                            document.write('第' + i + '次 :' + ans + '回答正確~' + '<br>');
+                            document.write('挑戰成功');
+                            break;
+                        }
+
+                        else {
+                            if (i < 3) {
+                                document.write('第' + i + '次 :' + ans + ' 答錯!' + '<br>');
+                            }
+                            
+                            else {
+                                document.write('第' + i + '次 :' + ans + ' 答錯!' + '<br>');
+                                document.write('挑戰失敗');
+                                break;
+                            }
+
+                        }
+
+                    }
+                }
             }
         }
-        
+
+
 
 
 
