@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    有參數，有傳回值
+        /* 
+        第1次分數:50
+        第2次分數:80
+        第3次分數:50
+        第4次:取消
+       --------
+       及格人數
+       不及格人數
+       總分
+       總平均
+
+ */
+
+
+        let count = 0;
+        let pass = 0;
+        let fail = 0;
+        let tot = 0;
+        let avg = 0;
+        while (true) {
+
+            let score = prompt('請輸入成績');
+            if (score == null || score === '-1') {
+                break;
+            }
+
+            if (isNaN(score)) {
+                alert('請輸入數字');
+                continue;
+            }
+            score = Number(score);
+            if (score < 0 || score > 100) {
+                alert('請輸入0~100之間的數字');
+                continue;
+
+            }
+
+            if (score >= 60) {
+                pass++;
+            }
+            else {
+                fail++;
+            }
+            tot = tot + score;
+            count++;
+            document.write(`第${count}次:${score}分<br>`)
+        }
+
+
+
+
+
+
+        document.write(`-----------------<br>`);
+        document.write(`　及格人數: ${pass}<br>`);
+        document.write(`不及格人數: ${fail}<br>`);
+        document.write(`總　　　分: ${tot}<br>`);
+        avg = tot / (fail + pass);
+        avg = avg.toFixed(2);
+        document.write(`總　平　均: ${avg}<br>`);
+
+
+
+
+        // 請輸入成績N次，直到輸入-1或取消結束
+
+
+
+    </script>
+</body>
+
+</html>

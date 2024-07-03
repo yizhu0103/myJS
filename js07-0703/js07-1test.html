@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function calc(a, b, c) {
+
+            if (c == '+') {
+                document.write(`${a}+${b}=${a + b}`);
+            }
+            else if (c == '-') {
+                document.write(`${a}-${b}=${a - b}`);
+            }
+            else if (c == '*') {
+                document.write(`${a}*${b}=${a * b}`);
+            }
+            else if (c == '/') {
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            }
+            else {
+                document.write('運算符號輸入錯誤');
+            }
+
+        }
+
+        let first = prompt('請輸入數字1');
+
+        let second = prompt('數字2');
+
+        let operation = prompt('運算符號(+,-,*,/)');
+        if (first == null || second == null || operation == null) {
+            document.write('您按了取消');
+        }
+        else {
+            if (first == '' || second == '' || operation == '') {
+                document.write('不能空白');
+            }
+
+            else {
+                first = Number(first.trim());
+                second = Number(second.trim());
+                operation = operation.trim();
+                if (isNaN(first) || isNaN(second) ) {
+                    document.write('輸入錯誤');
+                }
+
+                else {
+                    calc(first, second, operation);
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
