@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立陣列方法1
+        let arr1 = [100, 30, 99, 10, 3];
+        document.write(arr1+'<br>');
+         arr1.sort(); //這樣排序 10 100 3 30 99.
+        document.write('sort=>'+arr1+'<br>');
+        arr1.sort((a,b)=>{
+            return a-b;//遞增a-b 遞減b-a
+        });//資料排序  箭頭函式 可以用function寫
+        
+
+        document.write('排序後 遞增=>'+arr1+'<br>');
+
+        arr1.sort((a,b)=>{
+            return b-a;//遞增a-b 遞減b-a
+        });
+
+        document.write('排序後 遞減=>'+arr1+'<br>');
+
+        arr1.reverse();//排序轉向
+        document.write('排序後遞減 轉向=>'+arr1+'<br>');
+
+
+    </script>
+</body>
+
+</html>

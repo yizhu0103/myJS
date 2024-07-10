@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //陣列 array
+        //一維陣列=>熟悉100%
+        //二維陣列=>熟悉50%
+        //多維陣列=>知道即可
+
+        
+        let arr1=[50,90,100,30,60];//一維 編號(索引值)0-4 長度5最後一個編號加一 
+        //陣列長度:陣列名稱.length
+        document.write('arr1陣列長度:'+arr1.length);
+        document.write('<br>');
+        //取出陣列值:陣列名稱[索引值]
+        document.write('arr1編號2長度:'+arr1[2]);
+        document.write('<br>');
+        //更改陣列值
+        arr1[2]=80;
+        document.write('更改後arr1編號2長度:'+arr1[2]);
+        document.write('<br>');
+        //請使用迴圈，顯示arr1所有編號值
+        
+        // for(i=0;i<arr1.length;i++){
+        //     document.write('arr1編號'+i+'長度:'+arr1[i]+'<br>');
+        //     tot=tot+arr1[i];
+        // }
+        
+        // document.write('arr1和:'+tot);
+        // document.write('<br>');
+        // document.write('<br>');
+        let max=arr1[0];
+        let min=arr1[0];
+        for(let i=1;i<arr1.length;i++){
+            if(arr1[i]>max){
+                max=arr1[i];
+            }           
+            else if(arr1[i]<min){
+                min=arr1[i];
+            }
+            
+        }
+        document.write(max);
+        document.write('<br>');
+        document.write(min);
+        document.write('<br>');
+        
+        
+
+        // let o=0
+        // while(o<arr1.length){
+        //     document.write('arr1編號'+o+'長度:'+arr1[o]+'<br>');
+        //     o++;
+        // }
+        
+        // document.write('<br>');
+        // let k=0;
+        // do {
+        //     document.write('arr1編號'+k+'長度:'+arr1[k]+'<br>');
+        //     k++
+        // }
+        // while(k<arr1.length);
+
+    </script>
+    
+</body>
+</html>

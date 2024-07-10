@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立陣列方法1
+        let arr1 = [1, 2, 3, 4, 5];
+        document.write(arr1);
+        // 建立陣列方法2:先建立物件再給值
+        let arr2 = new Array();
+        arr2[0] = 'a';
+        arr2[1] = 100;
+        document.write('<br>');
+        document.write(arr2);
+        document.write('<br>');
+        document.write(arr2.length + '<br>');
+        // 建立陣列方法3:建立物件，同時給值
+        let arr3 = new Array(99, 80, 'abc', true, null, { x: 1, y: 3 });//object物件
+        document.write(arr3 + '<br>');
+        document.write(arr3.length + '<br>');
+
+        // 合法陣列宣告
+        let arr4 = [];//空陣列
+        let arr5 = [1,2,3];
+        let arr6=['a', 'b', 'c'];
+        let arr7=[1,'2',true,[],{book:'javascript'}];
+
+        // 物件
+        let obj1={
+            x:5,
+            y:3
+        }
+// 陣列類型=>typeof陣列名稱
+document.write(typeof(123)+'<br>');
+document.write(typeof('123')+'<br>');
+document.write(typeof(arr5)+'<br>');
+document.write(typeof(obj1)+'<br>');
+document.write(typeof(obj1.x)+'<br>');
+document.write(typeof(arr6[1])+'<br>');
+
+
+    </script>
+</body>
+
+</html>
