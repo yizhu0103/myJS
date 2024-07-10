@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 猜數字：直到猜對才結束
+        // 用亂數產生一個值：60
+        // 輸入資訊顯示console.log()
+        // 第1次：50 => 太小了（提示：50-100）
+        // 第2次：90 => 太大了（提示：50-90）
+        // 第3次：80 => 太大了（提示：50-80）
+        // 第4次：55 => 太小了（提示：55-80）
+        // 第5次：60 => 猜對了
+
+        // console.log(Math.floor(Math.random()*100)); // 回傳 0 ~ 99
+        // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
+        // 產生亂數給變數bingoNum
+        let bingoNum = Math.floor(Math.random() * 100) + 1;
+        // console.log(bingoNum);
+
+
+        let ans;
+        let min = 0;
+        let max = 100;
+        let i = 0;
+        do {
+            ans = prompt('請輸入數字' + (min) + '-' + (max));
+            
+            if (ans < min || ans > max) {
+                alert('輸入範圍錯誤請再輸入一次' + (min) + '-' + (max));
+                
+            }
+            else if (ans === ''|| ans ===' ') {
+                alert('不能空白');
+            }
+            else if (isNaN(ans)) {
+                alert('請勿輸入非數字');
+            }
+            else if (ans%1!==0) {
+                alert('請勿輸入小數');
+            }
+            else if (ans==null) {
+                alert('請勿取消');
+            }
+
+            else {
+                ans = Number(ans);
+                i++;
+
+                if (ans > bingoNum) {
+                    max = ans;
+
+                    alert('第' + i + '次:' + ans + '=>太大了 提示:' + (min) + '-' + (max));
+                    document.write('第' + i + '次:' + ans + '=>:' + (min) + '-' + (max) + '<br>');
+                }
+
+                else if (ans < bingoNum) {
+                    min = ans;
+                    alert('第' + i + '次:' + ans + '=>太小了 提示:' + (min) + '-' + (max));
+                    document.write('第' + i + '次:' + ans + '=>:' + (min) + '-' + (max) + '<br>');
+                }
+               
+            }
+            
+        }
+        while (ans !== bingoNum);
+        alert('第' + i + '次:'+ ans + '猜對了');
+        document.write('第' + (i) + '次:' + ans + '猜對了');
+
+
+
+
+    </script>
+</body>
+
+</html>
