@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 顯示陣列中所有值
+        let arr = [1, 2, 3, 4, 5, '12345'];
+        // for
+        let result = '';
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + '<br>');
+        }
+        
+        document.write('<hr>');
+        // map
+        let arrMap = arr.map((n) => {
+            return n;
+        })
+        document.write(arrMap);
+        document.write('<hr>');
+
+        // for of
+        for (let n of arr) {
+            document.write(n + '<br>');
+        }
+
+        document.write('<hr>');
+        // forEach
+        arr.forEach((n) => {
+            document.write(n + '<br>');
+        })
+
+        document.write('<hr>');
+
+    </script>
+</body>
+
+</html>

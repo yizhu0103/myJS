@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 只顯示奇數
+        // 方法一
+        let arr1=[1,3,7,8,6,100];
+        document.write(arr1+'<br>');
+
+        for (let i=0; i<arr1.length; i++) {
+            if (arr1[i] % 2 == 1) {
+                document.write(arr1[i]+'<br>');
+                console.log(arr1[i]);
+            }
+        }
+
+        document.write('<hr>');
+        // 方法二
+        // 陣列中只保留奇數=>filter
+        let arr2 = [1, 3, 7, 234, 100];
+        document.write(arr2 + '<br>');//用箭頭函式確認arr1裡的數字是否為奇數並回傳
+        const odds = arr2.filter((n) => { //箭頭函式寫法
+            // // 檢查是否為奇數
+            // if (n % 2 == 1) {
+            //     return true;
+            // }
+            // return false;
+
+            // 簡化寫法
+            return n % 2 === 1; //n=1 =>1%2===1=>true
+        });
+        // let odds = arr2.filter(function(n)  { //匿名函式寫法
+        //     // // 檢查是否為奇數
+        //     // if (n % 2 == 1) {
+        //     //     return true;
+        //     // }
+        //     // return false;
+
+        //     // 簡化寫法
+        //     return n % 2 === 1; //n=1 =>1%2===1=>true
+        // }); 
+        // let odds = arr2.filter((n)=>n % 2 === 1);
+
+
+        console.log('篩選後的陣列奇數內容');
+        console.log(odds);
+        console.log('odds資料型別');
+        console.log(typeof(odds));
+        console.log('篩選後原陣列內容');
+        console.log(arr2);
+
+        document.write('篩選後的陣列奇數內容: ' + odds + '<br>');
+        document.write(typeof(odds) + '<br>');
+        document.write('篩選後原陣列內容' + arr2 + '<br>');//arr1還存在
+        
+
+
+        
+        
+
+
+
+    </script>
+</body>
+
+</html>
