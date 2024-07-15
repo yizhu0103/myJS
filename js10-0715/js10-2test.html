@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        let r2 = 0;
+        let arr1 = [];
+        let arr2 = [];
+        let result = 0;
+        let r3 = Math.floor(Math.random() * 49) + 1;
+
+        for (let i = 0; i <= 5; i++) {
+            r2 = Math.floor(Math.random() * 49) + 1
+            result = arr1.indexOf(r2);
+            if (result === -1) {
+                arr1.push(r2);
+
+            }
+
+        }
+      
+        // let result2 = 0;
+
+
+        // for (let i = 0; i <= 5; i++) {
+        //     r2 = Math.floor(Math.random() * 49) + 1
+        //     result2 = arr1.includes(r2);
+        //     if (result2 === false) {
+        //         arr1.push(r2);
+
+        //     }
+
+        // }
+
+        document.write(arr1 + '<br>');
+
+        document.write('<hr>');
+
+        arr1.sort((a, b) => {
+            return a - b;
+        });
+        document.write('排序後 遞增=>' + arr1 + '<br>')
+        arr2=arr1
+        arr2.push(r3);
+        
+
+        
+        document.write('特別號:' + r3 + '<br>')
+        document.write( arr2 + '<br>')
+
+
+
+
+
+
+    </script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 亂數1-5任一值
+        // let r2 = Math.random();
+        // document.write(r2 + '<br>');
+        // document.write(r2 * 5 + '<br>');
+        // document.write((r2 * 5) + 1 + '<br>');
+        // document.write('亂數值:' + Math.floor(r2 * 5 + 1) + '<br>');//math.floor回傳最大值
+        let r2 = Math.floor(Math.random() * 5) + 1;
+        document.write('亂數值:' + r2 + '<br>');
+
+
+        // 宣告一個陣列
+        let arr1 = [1, 100, 3, 50, 5];
+        document.write('原陣列:' + arr1 + '<br>')
+        // let result = arr1.indexOf(Math.floor(r2 * 5) + 1);//indexOf陣列中搜尋的起始索引
+        let result = arr1.indexOf(r2);
+        // // 陣列中有會顯示在哪個位置 沒有則顯示-1
+        // document.write('陣列中尋找的結果:' + result + '<br>');
+        // console.log(result);
+        // // 陣列中若沒有找到亂數值，加入陣列
+        // if (result === -1) {
+        //     // arr1.push(Math.floor(r2 * 5) + 1);
+        //     arr1.push(r2 );
+        //     document.write('新陣列:'+arr1);
+        // }
+
+
+
+        document.write('<hr>');
+        // 方法2:includes(item)
+        let result2 = arr1.includes(r2);
+        document.write('陣列中尋找結果:' + result2 + '<br>');
+        if (result2 === false) {
+            // arr1.push(Math.floor(r2 * 5) + 1);
+            arr1.push(r2);
+            document.write('新陣列:' + arr1);
+
+        }
+
+
+
+
+
+
+    </script>
+
+    </script>
+</body>
+
+</html>

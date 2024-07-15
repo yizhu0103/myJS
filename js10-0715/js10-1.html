@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write(Math.random() + '<br>');
+        let r1 = Math.random();
+        document.write(r1 + '<br>');
+        document.write(Math.random() + '<br>');
+        document.write(r1 + '<br>');
+        document.write('<hr>');
+        // 取出小數兩位
+        // 1.先乘100
+        document.write(r1 * 100 + '<br>');
+        // 2.去除小數
+        document.write(Math.floor(r1 * 100) + '<br>');
+        // 3.在除回來
+        document.write((Math.floor(r1 * 100)) / 100 + '<br>');
+        document.write('<hr>');
+        // 也可以這樣，但出來是文字
+        document.write(r1.toFixed(2) + '<br>');
+        // 轉成數值
+        document.write(Number(r1.toFixed(2)) + '<br>');
+        // parseInt不會保存小數點資料 Number會保存小數點資料
+        document.write(parseInt(r1.toFixed(2)) + '<br>');
+        
+
+
+    </script>
+
+</body>
+
+</html>
