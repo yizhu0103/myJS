@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 猜數字：直到猜對才結束
+        // 用亂數產生一個值：60
+        // 輸入資訊顯示console.log()
+        // 第1次：50 => 太小了（提示：50-100）
+        // 第2次：90 => 太大了（提示：50-90）
+        // 第3次：80 => 太大了（提示：50-80）
+        // 第4次：55 => 太小了（提示：55-80）
+        // 第5次：60 => 猜對了
+
+        // console.log(Math.floor(Math.random()*100)); // 回傳 0 ~ 99
+        // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
+        // 產生亂數給變數bingoNum
+        let bingoNum = Math.floor(Math.random() * 100) + 1;
+        // console.log(bingoNum);
+
+        function ChkValid(ans) {
+            if (ans === '' || ans === ' ') {
+                return '不能空白';
+            }
+            else if (isNaN(ans)) {
+                return '請勿輸入非數字';
+            }
+            else if (ans == null) {
+                return '請勿取消';
+            }
+            else {
+                return;
+            }
+        }
+
+        function ChkDecimalRange(ans) {
+            if (ans < min || ans > max) {
+                return '輸入範圍錯誤請再輸入一次';
+            }
+            else if (ans === bingoNum) {
+                return '猜對了';
+            }
+            else if (ans % 1 !== 0) {
+                return '請勿輸入小數';
+            }
+            else {
+                return;
+            }
+
+        }
+
+        function ChkAns(ans) {
+        if (ans > bingoNum) {
+                return '太大了';
+            }
+            else if (ans < bingoNum) {
+                return '太小了';
+            }
+            else {
+                return;
+            }
+
+        }
+
+
+        let ans;
+        let min = 0;
+        let max = 100;
+        let i = 0;
+        // do {
+        ans = prompt('請輸入數字' + bingoNum);
+        i++;
+
+        ansNum = Number(ans);
+
+        if (ans > bingoNum) {
+            max = ans;
+
+            alert('第' + i + '次:' + ans + '=>太大了 提示:' + (min) + '-' + (max));
+        }
+
+        else if (ans < bingoNum) {
+            min = ans;
+            alert('第' + i + '次:' + ans + '=>太小了提示:' + (min) + '-' + (max));
+        }
+
+        document.write('第' + i + '次:' + ans + ChkScore(ans)+ChkAns(ansNum) + (min) + '-' + (max) + '<br>');
+        }
+        while (ans !== bingoNum);
+        alert('第' + (i) + '次:' + ans + '猜對了');
+        document.write(ChkScore(ans) + ChkAns(ansNum));
+
+
+
+
+    </script>
+</body>
+
+</html>
