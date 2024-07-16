@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let userName = '建仔';
+        let userAge = 7;
+        function sayhi() {
+            document.write(`Hi,我是${userName},今年${userAge}歲`)
+        }
+        sayhi();
+        // 建立物件
+        // let score=[];陣列
+        let user = {
+            // 物件屬性
+            // 屬性名稱:屬性值
+            name: '建仔',
+            age: 7,
+            // 物件方式
+            // 方法名稱:function(){...}
+            sayHi: function () {
+                // this 目前同一個物件中的屬性
+                document.write(`Hi,我是${this.name},今年${this.age}歲`)
+            }
+        };
+        // 呼叫物件
+        // 使用成員運算子
+        document.write('<br>');
+        document.write(user.name);
+        document.write('<br>');
+        document.write(user.age);
+        document.write('<br>');
+        user.sayHi();
+        document.write('<br>');
+        document.write(user['name']);
+        document.write('<br>');
+        // 修改物件中的年齡屬性
+        user.age = 10
+        document.write(user.age);
+        document.write('<br>');
+        // 刪除物件中的年齡屬性
+        delete user.age
+        document.write(user.age);
+        document.write('<br>');
+      
+
+
+
+    </script>
+</body>
+
+</html>

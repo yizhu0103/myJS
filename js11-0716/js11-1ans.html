@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 大樂透 =>1-49挑6個 1-49挑一個
+        // 威力彩 =>1-38挑6個 1-8挑1個
+        // 今彩539=>1-39挑五個
+        let lotGameNo = prompt('請輸入樂透號碼代號=>\n1.大樂透 2.威力彩 3.今彩539');
+
+
+        /* 中獎號碼 */
+
+
+        switch (lotGameNo) {
+            case '1':
+                getLotNum();
+                break;
+            case '2':
+                getLotNum2();
+                break;
+            case '3':
+                getLotNum3();
+                break;
+            default:
+                document.write('err，請重新重新輸入!');
+                break;
+        }
+
+
+        function getRandNum(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+        // 大樂透
+        function getLotNum() {
+            let arrNum = [];
+            let i = 0;
+
+            while (i < 6) {
+                let lotNum = getRandNum(49);
+
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            document.write(arrNum + '<br>');
+            document.write('<hr>');
+
+            arrNum.sort((a, b) => {
+            return a - b;
+        });
+        document.write(arrNum + '<br>');
+        let supNum = getRandNum(49);
+            document.write('特別號:' + supNum + '<br>');
+        }
+        // // 威力彩
+        function getLotNum2() {
+            let arrNum = [];
+            let i = 0;
+
+            while (i < 6) {
+                let lotNum = getRandNum(38);
+
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            document.write(arrNum + '<br>');
+            document.write('<hr>');
+
+            arrNum.sort((a, b) => {
+            return a - b;
+        });
+        document.write(arrNum + '<br>');
+        let supNum = getRandNum(8);
+            document.write('特別號:' + supNum + '<br>');
+        }
+        //         }
+        // // 今彩539
+        function getLotNum3() {
+            let arrNum = [];
+            let i = 0;
+
+            while (i < 5) {
+                let lotNum = getRandNum(39);
+
+                if (arrNum.indexOf(lotNum) == -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            document.write(arrNum + '<br>');
+            document.write('<hr>');
+
+            arrNum.sort((a, b) => {
+            return a - b;
+        });
+        document.write(arrNum + '<br>');
+        
+        }
+       
+
+        
+
+        // document.write('排序後 遞增=>' + arrNum + '<br>');
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    </script>
+</body>
+
+</html>

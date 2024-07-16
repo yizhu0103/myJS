@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let arrNum = [];
+
+
+        // for (let i = 0; i < 6; i++) {
+        //     let lotNum = Math.floor(Math.random() * 49) + 1
+
+        //     if (arr1.indexOf(lotNum) === -1) {
+        //         arrNum.push(lotNum);
+        //     }
+        //     else {
+        //         i--;
+        //     }
+
+        // }
+        // let r3 = Math.floor(Math.random() * 49) + 1;
+
+
+        // let i=0;
+        // while(i<6){
+        //     let lotNum = Math.floor(Math.random() * 49) + 1
+
+        // if (arrNum.indexOf(lotNum) === -1) {
+        //     arrNum.push(lotNum);
+        //     i++;
+        // }
+        // }
+        // let i = 0;
+        // do {
+        //     let lotNum = Math.floor(Math.random() * 49) + 1
+
+        //     if (arrNum.indexOf(lotNum) === -1) {
+        //         arrNum.push(lotNum);
+        //         i++;
+        //     }
+        // }
+        // while(i<6);
+
+        // let result2 = 0;
+        let i = 0;
+        do {
+            let lotNum = getRandNum();
+
+            if (arrNum.indexOf(lotNum) === -1) {
+                arrNum.push(lotNum);
+                i++;
+            }
+        }
+        while(i<6);
+
+        // for (let i = 0; i <= 5; i++) {
+        //     r2 = Math.floor(Math.random() * 49) + 1
+        //     result2 = arr1.includes(r2);
+        //     if (result2 === false) {
+        //         arr1.push(r2);
+
+        //     }
+
+        // }
+
+
+        // 建立函式時機點
+        // 被動執行
+        // function Name(){...}
+        // 立刻執行
+        // 匿名函式=>function(){..}
+// 箭頭函式=>()=>{...}
+// 建立函式取亂數
+function getRandNum(){
+    return Math.floor(Math.random() * 49) + 1;
+
+}
+        document.write(arrNum + '<br>');
+
+        document.write('<hr>');
+
+        arrNum.sort((a, b) => {
+            return a - b;
+        });
+        document.write('排序後 遞增=>' + arrNum + '<br>');
+        document.write('特別號:' + getRandNum() + '<br>');
+
+
+
+
+
+
+
+    </script>
+
+    </script>
+</body>
+
+</html>

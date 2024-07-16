@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 物件模組化=>物件樣版=>字首會大寫
+        // 建立物件樣板=>Mobile
+        function Mobile(brand, color, size) {
+            this.brand = brand;//外面傳進來給他的
+            this.color = color;
+            this.size = size;
+            this.showMsg = function () {
+                document.write(`品牌:${this.brand},顏色${this.color},尺寸${this.size}`);
+            }
+
+        }
+        let M1 = new Mobile('iphone', 'black', '14');//從moblie產生一個新的 分別給值
+        let M2 = new Mobile('三星', '灰黑', 'A71');
+        M1.showMsg()
+        document.write('<br>');
+        M2.showMsg()
+        document.write('<br>');
+
+
+    </script>
+</body>
+
+</html>

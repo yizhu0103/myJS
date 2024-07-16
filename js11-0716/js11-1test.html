@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 大樂透 =>1-49挑6個 1-49挑一個
+        // 威力彩 =>1-38挑6個 1-8挑1個
+        // 今彩539=>1-39挑五個
+        let logGameNo = prompt('請輸入樂透號碼代號=>\n1.大樂透 2.威力彩 3.今彩539');
+        let arrNum = [];
+        let supNum = 0;
+        let i = 0;
+
+        /* 中獎號碼 */
+        if (logGameNo == 1) {
+           
+            document.write('大樂透: <br>');
+            do {
+                let lotNum = getRandNum();
+
+                if (arrNum.indexOf(lotNum) === -1) {
+                    arrNum.push(lotNum);
+                    i++;
+                }
+            }
+            while (i < 6);
+        }
+        else if (logGameNo == 2) {
+           
+            document.write('威力彩: <br>');
+            do {
+                let lotNum = getRandNum();
+                if (lotNum <= 38) {
+                    if (arrNum.indexOf(lotNum) === -1) {
+                        arrNum.push(lotNum);
+                        i++;
+                    }
+
+                }
+            }
+            while (i < 6);
+        }
+        else if (logGameNo == 3) {
+            
+            document.write('今彩539: <br>');
+            do {
+                let lotNum = getRandNum();
+                if (lotNum <= 39) {
+                    if (arrNum.indexOf(lotNum) === -1) {
+                        arrNum.push(lotNum);
+                        i++;
+                    }
+                }
+            }
+            while (i < 5);
+        }
+        document.write(arrNum + '<br>');
+        document.write('<hr>');
+
+        arrNum.sort((a, b) => {
+            return a - b;
+        });
+
+        document.write('排序後 遞增=>' + arrNum + '<br>');
+
+        /* 特別號 */
+        if (logGameNo == 1) {
+            supNum = getRandNum();
+            document.write('特別號:' + supNum + '<br>');
+        }
+        else if (logGameNo == 2) {
+            for (i = 0; i < Infinity; i++) {
+                supNum = getRandNum();
+                if (supNum <= 8) {
+                    document.write('特別號:' + supNum + '<br>');
+                    break;
+                }
+            }
+        }
+        else if (logGameNo == 3) {
+            document.write('特別號:沒有特別號' + '<br>');
+        }
+
+
+
+        function getRandNum() {
+            return Math.floor(Math.random() * 49) + 1;
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    </script>
+</body>
+
+</html>
