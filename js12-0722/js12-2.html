@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 建立物件樣板
+        // 習慣物件樣板名稱自首大寫
+        function Sdate(no, name, HtmlScore, CssScore, JsScore) {
+            // this代表物件本身
+            this.sid = no;
+            this.sName = name;
+            this.html = HtmlScore;
+            this.css = CssScore;
+            this.javascript = JsScore;
+            this.showData = function () {//變成方法 後面要呼叫才會出來
+                console.log(`${this.sid}號${this.sName}同學,成績總分為${this.html + this.css + this.javascript}分`);
+            }
+        }
+
+        // 使用物件樣板
+        let s1 = new Sdate('s001', '王曉明', 100, 100, 100);
+        // 呼叫物件
+        s1.showData();
+
+        let s2 = new Sdate('s002', '王大明', 10, 10, 10);
+        s2.showData();
+        let s3 = new Sdate('s003', '李四', 10, 98, 100);
+        s3.showData();
+
+        // 計算各科總分
+        //    方法一
+        // console.log(`htm總分:${s1.html+s2.html+s3.html},css總分:${s1.css+s2.css+s3.css},javascript總分:${s1.javascript+s2.javascript+s3.javascript}`);
+        console.log('----陣列物件----')
+        // 方法二:陣列物件
+        // 宣告陣列
+        let arrObj = [s1, s2, s3];
+// console.log(arrObj);
+let totHtml=0;
+let totCss=0;
+let totjs=0;
+// let totHtml=0, totCss=0, totjs=0;
+for(let i=0;i<arrObj.length;i++) {
+    totHtml = totHtml+arrObj[i].html;
+    totCss = totCss+arrObj[i].css;
+    totjs = totjs+arrObj[i].javascript;
+
+}
+console.log('HTML總分:'+totHtml);
+console.log('CSS總分:'+totCss);
+console.log('js總分:'+totjs);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
