@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        ul li {
+            position: relative;
+            padding: 12px;
+        }
+
+
+        .close {
+            position: absolute;
+            padding: 12px;
+            top: 0;
+            left: 230px;
+
+        }
+
+        .close:hover {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" id="myInput">
+        <input type="button" value="加入" id="btn">
+        
+
+    </form>
+
+    <ul id="myUL">
+        <li></li>
+    
+    </ul>
+    <script >
+        let myBtn = document.querySelector('#btn');
+    myBtn.addEventListener('click', () => {
+        // 新增 li 元素
+        var li = document.createElement('li');
+        // 取得文字方塊內容
+        var inputValue = document.getElementById('myInput').value;
+        // 新增文字節點
+        var t = document.createTextNode(inputValue);
+        // 將文字節點加入到新節點 li
+        li.appendChild(t);
+    
+        if (inputValue === '') {
+            alert('you must write something!');
+        } else {
+            document.getElementById('myUL').appendChild(li);
+       
+    
+        var span = document.createElement('SPAN');
+        var txt = document.createTextNode('刪除');
+        span.className = 'close'; 
+        span.appendChild(txt);
+        li.appendChild(span);
+    
+        span.addEventListener('click', () => {
+            var li = span.parentNode;
+            li.parentNode.removeChild(li);
+        })};
+    });
+ 
+
+
+ 
+
+
+    </script>
+</body>
+
+</html>

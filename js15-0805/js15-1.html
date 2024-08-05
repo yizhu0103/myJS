@@ -72,14 +72,14 @@
         // 刪除li
 
 
-        span.addEventListener('click', () => {
-            var myClose = document.getElementsByClassName('close');
+        // span.addEventListener('click', () => {
+        //     var myClose = document.getElementsByClassName('close');
            
-            let removeElm = document.getElementsByTagName('li');
+        //     let removeElm = document.getElementsByTagName('li');
             
-            let parentElm = removeElm.parentNode;
-            parentElm.removeChild(removeElm);
-        });
+        //     let parentElm = removeElm.parentNode;
+        //     parentElm.removeChild(removeElm);
+        // });
 
         //取得新增按鈕
         let myBtn = document.querySelector('#btn');
@@ -109,7 +109,7 @@
                 let myClose=document.getElementsByName('span')
                 for(i =0;i<myClose.length;i++) {
                     close[i].onclick = function(){
-                        console.log(this.parentElm);
+                        
                     }
                     
                 }
