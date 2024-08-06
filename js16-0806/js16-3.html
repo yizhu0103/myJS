@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 事件基本語法 -->
+    <!-- <div 事件名稱='程式碼'>標籤內容</div> -->
+    <!-- <button 事件名稱="程式碼">按鈕內容</button> -->
+
+    <!-- <div onclick="document.body.innerHTML='hellow'">按一下 變更內容</div> -->
+    <div onclick="changeDiv()">按一下 變更內容</div>
+    <p >第一段Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis est aliquam, maxime laboriosam doloribus velit
+        voluptate officiis expedita, deleniti similique culpa ipsa, nam exercitationem ea! Consectetur voluptates eos
+        commodi? Mollitia!</p>
+
+    <p class="p2">第二段Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis est aliquam, maxime laboriosam doloribus velit
+        voluptate officiis expedita, deleniti similique culpa ipsa, nam exercitationem ea! Consectetur voluptates eos
+        commodi? Mollitia!</p>
+
+    <div onclick="changeP1()">按一下 變更第一段內容</div>
+    <div onclick="changeP2()">按一下 變更第二段內容</div>
+    <div onclick="changePall()">按一下 變更兩段內容</div>
+
+    <script>
+        function changeDiv() {
+            document.body.innerHTML = 'hellow';
+        }
+
+        // document.getElementsByTagName('p') 這是一個collection集合
+        // document.getElementsByTagName('p')[0].innerHTML 這樣才抓地到
+        function changeP1() {
+            document.querySelector('p').innerHTML = '123';/* querySelector不會抓到別的段落 取得第一個元素 不會往後抓 querySelectorAll才可以抓到其他全部段落 */
+        }
+
+        function changeP2() {
+            // document.getElementsByTagName('p')[1].innerHTML = '456';
+            document.querySelector('.p2').innerHTML = '456';
+            // document.getElementsByClassName('p2')[0].innerHTML = '456';
+            
+        }
+
+        function changePall() {
+            console.log(document.querySelectorAll('p'));
+            document.querySelectorAll('p').innerHTML = '789';
+        }
+
+    </script>
+</body>
+
+</html>
